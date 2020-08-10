@@ -1,0 +1,28 @@
+@model List<Aluno>
+
+<ul>
+  @foreach(Aluno a in Model)
+  {
+  string color;
+  string Aprovar;
+    if(a.EstaAprovado())
+    {
+      color = "color:green";
+      Aprovar = "Aprovado";
+
+    }
+    else
+    {
+      color = "color:red";
+      Aprovar = "Reprovado";
+    }
+
+    <li style="@color">@Aprovar</li>
+    <li><p>Nome:@a.Nome</p></li>
+    <li><p>Disciplina:@a.Disciplina</p></li>
+    <li><p>Nota:@a.Nota</p></li>
+    <br/>
+  }
+</ul>
+
+<p><a asp-action="Cadastro">Realizar novo Cadastro</a></p>

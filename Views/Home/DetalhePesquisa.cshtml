@@ -1,0 +1,12 @@
+@model Aluno
+
+<form method="POST">
+  
+  <p>Informe seu nome:</p>
+  
+  <p>
+       <label asp-for="Nome">Nome:</label>
+       <input asp-for="Nome" />
+   </p>
+   <input asp-action="Detalhe" type="submit" value="Procurar" />
+</form>
